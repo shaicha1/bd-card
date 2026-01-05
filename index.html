@@ -11,7 +11,7 @@
             margin: 0;
             min-height:100vh;
             font-family: 'Pacifico', cursive ;
-            background: linear-gradient(135deg, #7f7cff,#ff8ec7);
+            background: linear-gradient(135deg,#0a1a3a,#162b5c,#1f3c88);
             overflow-x: hidden;
         }
         .wrapper{
@@ -23,12 +23,12 @@
             z-index: 2;
         }
         .card{
-            background: rgba(255,255,255,0.25);
+            background: rgba(255,255,255,0.08);
             backdrop-filter: blur(12px);
             padding: 50px 60px;
             border-radius: 30px;
             text-align: center;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
         }
         h1{
             font-size:3.5rem ;
@@ -112,6 +112,18 @@
             background:#709616 ;
             animation-delay: 1s;
         }
+        #music-btn{
+            margin-top: 20px;
+            padding: 10px 22px;
+            font-size: 1rem;
+            border:none;
+            border-radius: 30px;
+            background: linear-gardient(135deg, #ff9ad5,#c77dff);
+            color: white;
+            cursor:pointer;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+        }
+            
 
         @keyframes floatUp{
             from{
@@ -149,7 +161,7 @@
     <div class="wrapper">
         <div class="card">
             <h1>Happy BirthdayYYYYYY 🎉🎊</h1>
-            <p>May all of yr days be filled with happines 🎂</p>
+            <p>oi youuyy olddddd🎂</p>
             <button class="music-btn" onclick="playMusic()">Play Music</button>
 
             <div class="qr.png">
@@ -166,13 +178,25 @@
         <div class="balloon"></div>
         <div class="balloon"></div>
     </div>
-    <audio id="bgMusic" loop>
+    <audio id="bg-Music" loop>
         <source src="music.mp3" type="audio/mpeg">
     </audio>
     <script>
-        function playMusic(){
-            document.getElementById(bgMusic),play();
+        const music = document.getElementById("bg-music");
+        const btn = document.getElementById("music-btn");
+
+        btn.addEventListener("click", () => {
+            if(music.paused) {
+                music.play();
+                btn.textContent = "⏸️ Pause music";
+            } else{
+                music.pause();
+                btn.textContent ="▶️Play music";
+            }
+        });
+        
         }
     </script>
 </body>
+
 </html>
